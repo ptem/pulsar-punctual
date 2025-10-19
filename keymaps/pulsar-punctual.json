@@ -1,0 +1,26 @@
+{
+  "atom-workspace atom-text-editor[data-grammar~='js']": {
+    "ctrl-alt-p": "pulsar-punctual:toggle",
+    "shift-enter": "pulsar-punctual:evalLine",
+    "ctrl-enter": "pulsar-punctual:evalBlock",
+    "ctrl-alt-enter": "pulsar-punctual:evalCode"
+  },
+  
+  "atom-workspace atom-text-editor[data-grammar~='source']": {
+    "ctrl-alt-p": "pulsar-punctual:toggle",
+    "shift-enter": "pulsar-punctual:evalLine",
+    "ctrl-enter": "pulsar-punctual:evalBlock",
+    "ctrl-alt-enter": "pulsar-punctual:evalCode"
+  },
+  
+  "atom-workspace atom-text-editor[data-grammar~='text']": {
+    "ctrl-alt-p": "pulsar-punctual:toggle",
+    "shift-enter": "pulsar-punctual:evalLine",
+    "ctrl-enter": "pulsar-punctual:evalBlock",
+    "ctrl-alt-enter": "pulsar-punctual:evalCode"
+  },
+
+  "atom-workspace": {
+    "ctrl-shift-h": "pulsar-punctual:toggleVisibility"
+  }
+}

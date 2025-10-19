@@ -1,0 +1,80 @@
+{
+  "name": "Punctual",
+  "scopeName": "source.punctual",
+  "fileTypes": ["punc", "punctual"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#operators" },
+    { "include": "#functions" },
+    { "include": "#variables" },
+    { "include": "#vectors" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-dash.punctual",
+          "match": "--.*$"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.punctual",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            { "name": "constant.character.escape.punctual", "match": "\\\\." }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.punctual",
+          "match": "\\b(?:0x[0-9A-Fa-f]+|\\d+(?:\\.\\d+)?)\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        { "name": "keyword.operator.pipe.punctual", "match": ">>" },
+        { "name": "keyword.operator.bind.punctual", "match": "<<" },
+        { "name": "keyword.operator.apply.punctual", "match": "\\$" },
+        { "name": "keyword.operator.pow.punctual", "match": "\\*\\*" },
+        { "name": "keyword.operator.xor.punctual", "match": "~~" },
+        { "name": "keyword.operator.swap.punctual", "match": "<>" },
+        { "name": "keyword.operator.arithmetic.punctual", "match": "[-+*/]" },
+        { "name": "keyword.operator.compare.punctual", "match": "[=<>!]=?|==|<=|>=|!=" },
+        { "name": "punctuation.separator.comma.punctual", "match": "," },
+        { "name": "punctuation.section.group.begin.punctual", "match": "[()]" }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "support.function.punctual",
+          "match": "\\b(circle|rect|tri|line|iline|osc|sin|saw|time|mono|gate|maxp|fit|prox|hsvrgb|rgbhsv|fb|mask|col|zoomxy)\\b"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.assignment.punctual",
+          "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\s*(?=<<)"
+        }
+      ]
+    },
+    "vectors": {
+      "patterns": [
+        { "name": "punctuation.section.brackets.begin.punctual", "match": "\\[" },
+        { "name": "punctuation.section.brackets.end.punctual", "match": "\\]" }
+      ]
+    }
+  }
+}

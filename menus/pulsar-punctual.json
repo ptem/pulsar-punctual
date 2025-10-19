@@ -1,0 +1,63 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Punctual",
+        "submenu": [
+          {
+            "label": "Toggle Punctual",
+            "command": "pulsar-punctual:toggle"
+          },
+          {
+            "label": "Eval Line",
+            "command": "pulsar-punctual:evalLine"
+          },
+          {
+            "label": "Eval Block",
+            "command": "pulsar-punctual:evalBlock"
+          },
+          {
+            "label": "Eval All Code",
+            "command": "pulsar-punctual:evalCode"
+          },
+          {
+            "label": "Toggle Visibility",
+            "command": "pulsar-punctual:toggleVisibility"
+          }
+        ]
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "Punctual",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "pulsar-punctual:toggle"
+            },
+            {
+              "label": "Eval Line",
+              "command": "pulsar-punctual:evalLine"
+            },
+            {
+              "label": "Eval Block",
+              "command": "pulsar-punctual:evalBlock"
+            },
+            {
+              "label": "Eval All Code",
+              "command": "pulsar-punctual:evalCode"
+            },
+            {
+              "label": "Toggle Visibility",
+              "command": "pulsar-punctual:toggleVisibility"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

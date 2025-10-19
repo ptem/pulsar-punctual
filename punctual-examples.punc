@@ -1,0 +1,22 @@
+-- Punctual Example File
+-- Use Shift+Enter to evaluate each line
+-- Use Ctrl+Enter to evaluate blocks (paragraphs)
+-- Use Ctrl+Alt+Enter to evaluate all code
+
+-- Default Punctual code from https://dktr0.github.io/Punctual/
+x1 << osc $ 0.11*[1,2]; y1 << osc $ 0.08/[3,4];
+x2 << osc $ 0.06/[5,6]; y2 << osc $ 0.04*[7,8];
+ls << mono $ iline [x1,y1] [x2,y2] 0.002;
+col << hsvrgb [osc 0.11,0.5 ~~ 1 $ osc 0.12, 1];
+mask << prox 0 ** 8;
+a << fit 1 $ ls * col * mask;
+gate 0.1 (maxp a (fb * 0.98)) >> add <> 5
+
+-- Clear output (hush)
+0 >> add
+
+-- Bouncing balls (from savamala docs)
+fit 1 $ (circle [-0.6, osc 0.25] 0.1 * [1,0,0] +:
+circle [-0.2, tri 0.25] 0.1 * [0,0,1] +:
+circle [0.2, saw 0.25] 0.1 * [1,0,1] +:
+circle [0.6, osc 0.5] 0.1 * [0,1,0]) >> add;

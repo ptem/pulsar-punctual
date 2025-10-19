@@ -1,0 +1,157 @@
+atom-text-editor.punctual-flash,
+atom-text-editor .punctual-flash {
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+#canvas,
+.punctual-canvas {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: -1 !important;
+    background: black !important;
+    pointer-events: none !important;
+}
+
+
+body.punctual-enabled {
+    atom-text-editor,
+    atom-text-editor.editor,
+    atom-text-editor[data-grammar] {
+      background-color: transparent !important;
+      background-image: none !important;
+      background: transparent !important;
+    }
+
+    atom-text-editor .lines,
+    atom-text-editor .scroll-view,
+    atom-text-editor .gutter,
+    atom-text-editor .gutter-container,
+    atom-text-editor::shadow .lines,
+    atom-text-editor::shadow .scroll-view,
+    atom-text-editor::part(lines),
+    atom-text-editor::part(scroll-view) {
+      background: transparent !important;
+      background-color: transparent !important;
+    }
+
+    &,
+    atom-workspace,
+    atom-workspace-axis,
+    atom-pane-container,
+    atom-pane,
+    .panes,
+    .pane,
+    .header *,
+    .footer * {
+      background: transparent !important;
+      background-color: transparent !important;
+    }
+    
+    atom-pane-container,
+    atom-pane,
+    .panes,
+    .pane {
+        background: transparent !important;
+    }
+    
+    atom-text-editor,
+    .editor {
+        background: transparent !important;
+    }
+    
+    atom-text-editor .lines,
+    atom-text-editor .scroll-view,
+    atom-text-editor .gutter,
+    atom-text-editor::shadow .lines,
+    atom-text-editor::shadow .scroll-view {
+        background: transparent !important;
+    }
+    
+    // Semi-transparent backgrounds for text readability
+    .line > span {
+       background: rgba(0, 0, 0, 0.6) !important;
+    }
+    
+    atom-text-editor {
+      color: #fff !important;
+    }
+    
+    // Text shadow; contrast against canvas
+    atom-text-editor .line {
+      text-shadow: 0 1px 1px black !important;
+    }
+
+    .cursor {
+        width: 0 !important;
+        box-shadow: 0 0 3px #0ff !important;
+        border-left: 4px solid #0ff !important;
+    }
+
+    autocomplete-suggestion-list,
+    atom-overlay {
+        background: rgba(0, 0, 0, 0.9) !important;
+    }
+
+    .region {
+        background: rgba(0, 255, 255, 0.4) !important;
+        z-index: 9 !important;
+    }
+    
+    .selected:before {
+        background: #0005 !important;
+        border-left: 8px #8888 solid !important;
+    }
+
+    li.texteditor.tab{
+      background: rgba(0, 0, 0, 0.0)!important;
+    }
+}
+
+
+
+// Ensure root backgrounds are transparent so the -1 canvas is visible
+html,
+body.punctual-enabled {
+  background: transparent !important;
+}
+
+
+// Punctual Console (terminal-like)
+.punctual-console {
+  background: #111;
+  color: #ddd;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.punctual-console__messages {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+// Severity helpers
+.punctual-console__messages .text-error { color: #ff6b6b; }
+.punctual-console__messages .text-success { color: #8bc34a; }
+.punctual-console__messages .text-info { color: #4fc3f7; }
+.punctual-console__messages .text-muted { color: #999; }
+
+// Ensure console remains opaque even when punctual-enabled makes UI transparent
+body.punctual-enabled .punctual-console {
+  background: #111 !important;
+  color: #ddd !important;
+}
+body.punctual-enabled .punctual-console__messages {
+  background: #111 !important;
+}
