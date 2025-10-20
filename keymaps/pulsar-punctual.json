@@ -21,6 +21,11 @@
   },
 
   "atom-workspace": {
-    "ctrl-shift-h": "pulsar-punctual:toggleVisibility"
+    "ctrl-shift-h": "pulsar-punctual:toggleVisibility",
+    "ctrl-alt-v": "pulsar-punctual:toggleVisibility",
+    "ctrl-alt-c": "pulsar-punctual:showConsole",
+    "ctrl-alt-up": "pulsar-punctual:increaseMasterVolume",
+    "ctrl-alt-down": "pulsar-punctual:decreaseMasterVolume",
+    "ctrl-alt-m": "pulsar-punctual:panic"
   }
 }
