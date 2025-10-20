@@ -14,6 +14,7 @@ https://github.com/user-attachments/assets/7ade7426-b351-486e-b681-fd49c49b3ef2
 - Ability to adjust punctual's phase slightly to account for imperfect timing between Punctual, Tidalcycles, and SuperCollider.
 - (Planned) More robust OSC integration to allow more dynamic visuals based on code evaluated within tidalcycles' REPL.
 - (Planned) Audio integration that isn't built on sticks and glue. ihatethebrowsersihateelectronihatetheweb
+- (Planned) Punctual event highlighting
 
 ## Usage
 
