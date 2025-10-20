@@ -1,7 +1,7 @@
 {
   "name": "pulsar-punctual",
   "main": "./lib/pulsar-punctual",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Live coding Punctual from within Pulsar - audio-visual performance language integration",
   "keywords": [
     "punctual",
