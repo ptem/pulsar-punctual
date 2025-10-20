@@ -1,16 +1,13 @@
 {
   "name": "pulsar-punctual",
   "main": "./lib/pulsar-punctual",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Live coding Punctual from within Pulsar - audio-visual performance language integration",
   "keywords": [
     "punctual",
-    "live-coding",
-    "webgl",
-    "audio",
-    "visual",
-    "performance",
-    "creative-coding"
+    "tidalcycles",
+    "supercollider",
+    "osc"
   ],
   "activationCommands": {
     "atom-workspace": [
