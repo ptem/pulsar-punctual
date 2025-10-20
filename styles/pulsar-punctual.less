@@ -1,6 +1,13 @@
-atom-text-editor.punctual-flash,
-atom-text-editor .punctual-flash {
-  background: rgba(255, 255, 255, 0.5) !important;
+@import "ui-variables";
+
+atom-text-editor.editor .line {
+  transition: background-color .8s ease-out;
+  -webkit-transition: background-color .8s ease-out;
+  
+  &.punctual-flash {
+    color: @text-color-selected;
+    background-color: @background-color-selected;
+  }
 }
 
 #canvas,
@@ -139,6 +146,10 @@ body.punctual-enabled {
   line-height: 1.4;
   white-space: pre-wrap;
   word-break: break-word;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 // Severity helpers
@@ -146,6 +157,47 @@ body.punctual-enabled {
 .punctual-console__messages .text-success { color: #8bc34a; }
 .punctual-console__messages .text-info { color: #4fc3f7; }
 .punctual-console__messages .text-muted { color: #999; }
+
+// Collapsible sections (details/summary)
+.punctual-console__messages details {
+  margin: 4px 0;
+  padding: 0;
+}
+
+.punctual-console__messages summary {
+  cursor: pointer;
+  user-select: none;
+  padding: 2px 0;
+  color: #4fc3f7;
+  font-weight: 500;
+  outline: none;
+  
+  &:hover {
+    color: #81d4fa;
+  }
+  
+  &::marker {
+    color: #999;
+  }
+  
+  // Alternative triangle indicator for better visibility
+  &::-webkit-details-marker {
+    color: #999;
+  }
+}
+
+.punctual-console__messages details[open] summary {
+  margin-bottom: 4px;
+  color: #8bc34a;
+}
+
+.punctual-console__messages details pre {
+  margin: 0;
+  padding: 4px 0 4px 16px;
+  color: #ddd;
+  background: transparent;
+  border-left: 2px solid #333;
+}
 
 // Ensure console remains opaque even when punctual-enabled makes UI transparent
 body.punctual-enabled .punctual-console {

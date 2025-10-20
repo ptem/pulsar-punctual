@@ -19,7 +19,10 @@
       "pulsar-punctual:evalBlock",
       "pulsar-punctual:evalCode",
       "pulsar-punctual:toggleVisibility",
-      "pulsar-punctual:showConsole"
+      "pulsar-punctual:showConsole",
+      "pulsar-punctual:increaseMasterVolume",
+      "pulsar-punctual:decreaseMasterVolume",
+      "pulsar-punctual:panic"
     ]
   },
   "repository": "https://github.com/ptem/pulsar-punctual",
@@ -30,27 +33,77 @@
   "dependencies": {
     "atom-message-panel": "^1.3.0",
     "raf-loop": "^1.1.3",
+    "osc": "^2.4.5",
     "punctual": "github:dktr0/Punctual"
   },
   "configSchema": {
-    "canvasWidth": {
-      "type": "integer",
-      "default": 1920,
-      "minimum": 320,
-      "description": "Canvas width in pixels"
+    "masterVolume": {
+      "type": "number",
+      "default": 70,
+      "minimum": 0,
+      "maximum": 100,
+      "order": 0,
+      "description": "Master audio output volume (0-100%)"
     },
-    "canvasHeight": {
-      "type": "integer",
-      "default": 1080,
-      "minimum": 240,
-      "description": "Canvas height in pixels"
-    },
-    "flashDuration": {
-      "type": "integer",
-      "default": 200,
-      "minimum": 100,
-      "maximum": 1000,
-      "description": "Duration of code flash effect in milliseconds"
+    "sonicLink": {
+      "title": "OSC/Tidal Integration",
+      "type": "object",
+      "order": 50,
+      "properties": {
+        "enabled": {
+          "title": "Enable Punctual to OSC/Tidal integration",
+          "type": "boolean",
+          "default": true,
+          "order": 1,
+          "description": "Enable UDP message receiver for SuperCollider/Tidal dirt messages"
+        },
+        "host": {
+          "title": "Host",
+          "type": "string",
+          "default": "127.0.0.1",
+          "order": 2,
+          "description": "Local interface to bind"
+        },
+        "port": {
+          "title": "Port",
+          "type": "integer",
+          "default": 57121,
+          "minimum": 1,
+          "maximum": 65535,
+          "order": 3,
+          "description": "UDP port to receive from"
+        },
+        "debug": {
+          "title": "Verbose OSC Logging",
+          "type": "boolean",
+          "default": false,
+          "order": 5,
+          "description": "Verbose log each incoming message in pulsar-punctual console"
+        },
+        "phaseSyncEnabled": {
+          "title": "Cycle/Phase Sync",
+          "type": "boolean",
+          "default": true,
+          "order": 6,
+          "description": "Align Punctual's cycle phase to Tidal's /dirt/play cycle. Helps keep things in time with each other."
+        },
+        "phaseTolerance": {
+          "title": "Maximum Phase Tolerance (in cycles)",
+          "type": "number",
+          "default": 0.10,
+          "minimum": 0,
+          "maximum": 1,
+          "order": 7,
+          "description": "Max allowed phase error (cycles) before re-alignment (default 1/10)."
+        },
+        "phaseLeadCycles": {
+          "title": "Punctual Phase Adjustment (in cycles)",
+          "description": "Advance (or delay) Punctual’s phase when syncing from /dirt/play to align audio/visuals to Tidal. To manually resync, `setcps` in Tidal while playing. Recommend 0.005-0.2 cycles, depending on A/V latency.",
+          "type": "number",
+          "order": 8,
+          "default": 0
+        }
+      }
     }
   }
 }
