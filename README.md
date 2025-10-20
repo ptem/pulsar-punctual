@@ -4,6 +4,9 @@ Punctual is a language for live coding audio and visuals. Pulsar is a fork of th
 
 This is a work in progress. Bugs are to be expected. I hope they're minimal! 💜💜
 
+
+https://github.com/user-attachments/assets/7ade7426-b351-486e-b681-fd49c49b3ef2
+
 ## Features 
 - Allows evaluation of punctual code in the Pulsar editor in `.punc` files, effectively a REPL. Effectively `atom-hydra` but for Punctual.
 - Displays visuals in the Pulsar editor behind text.
@@ -11,6 +14,7 @@ This is a work in progress. Bugs are to be expected. I hope they're minimal! �
 - Ability to adjust punctual's phase slightly to account for imperfect timing between Punctual, Tidalcycles, and SuperCollider.
 - (Planned) More robust OSC integration to allow more dynamic visuals based on code evaluated within tidalcycles' REPL.
 - (Planned) Audio integration that isn't built on sticks and glue. ihatethebrowsersihateelectronihatetheweb
+- (Planned) Punctual event highlighting
 
 ## Usage
 
